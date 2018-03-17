@@ -149,9 +149,9 @@ int main()
     // -------------------------------------------------------------------------------------------
     ourShader.use(); // // 我们还要通过使用glUniform1i设置每个采样器的方式告诉OpenGL每个着色器采样器属于哪个纹理单元。我们只需要设置一次即可，所以这个会放在渲染循环的前面
     // either set it manually like so:
-    glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); // 手动设置
+	ourShader.setInt("texture1", 0); // 使用着色器类设置
     // or set it via the texture class
-    ourShader.setInt("texture2", 1); // 或者使用着色器类设置
+    ourShader.setInt("texture2", 1); // 使用着色器类设置
 
 
     // render loop
